@@ -10,8 +10,7 @@ class News extends React.Component {
   }
 
   componentDidMount() {
-    const url =
-      "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=c423045c1c954de98b2753233d74b768";
+    const url = `https://newsapi.org/v2/${this.props.news.type}?${this.props.news.query}&apiKey=c423045c1c954de98b2753233d74b768`;
 
     fetch(url)
       .then((response) => {
@@ -26,7 +25,7 @@ class News extends React.Component {
   }
   renderItems() {
     return this.state.news.map((item) => (
-      <NewSingle key={item.id} item={item} />
+      <NewSingle key={item.url} item={item} />
     ));
   }
   render() {
