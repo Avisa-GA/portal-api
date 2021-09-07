@@ -2,13 +2,35 @@ import React from "react";
 import NewSingle from "./NewSingle";
 
 class News extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      news: [],
+    };
+  }
+
+  componentDidMount() {
+    const url =
+      "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=c423045c1c954de98b2753233d74b768";
+
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({
+          news: data.articles,
+        });
+      })
+      .catch((error) => console.log(error));
+  }
   renderItems() {
-    return this.props.items.map((item) => (
+    return this.state.news.map((item) => (
       <NewSingle key={item.id} item={item} />
     ));
   }
   render() {
-    return <ul>{this.renderItems()}</ul>;
+    return <div className="row">{this.renderItems()}</div>;
   }
 }
 
