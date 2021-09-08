@@ -27,7 +27,11 @@ class App extends React.Component {
         <div className="navbar-fixed">
           <nav>
             <div className="nav-wrapper indigo lighten-4">
-              <a href="/" className="bran-logo center">
+              <a
+                href="/"
+                className="bran-logo"
+                style={{ marginLeft: "2%", fontSize: "24px" }}
+              >
                 My Feed
               </a>
             </div>
