@@ -6,4 +6,5 @@ While React simplifies the challenge of making API calls, figuring out how best 
 * Fetching data
 * Updating your state
 * Using the axios library to make HTTP requests
+         <img src="https://img.shields.io/badge/-JavaScript-red" alt="js" /> <img src="https://img.shields.io/badge/-React.JS-blue" alt="react.js" /> <img src="https://img.shields.io/badge/-Application%20Programming%20Interface-yellow" alt="API" />
 
